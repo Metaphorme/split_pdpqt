@@ -89,13 +89,16 @@ func main() {
 	if *inputFile != "NoInputFile" {
 		inputFiles = append(inputFiles, *inputFile)
 	}
-	fmt.Println(inputFiles)
+
+	var num int
 
 	for _, fileName := range inputFiles {
 		modelsMap := getZINC(splitModels(readFile(fileName)))
 		fmt.Printf("Get %d models from %s\n", len(modelsMap), fileName)
 		for zinc, content := range modelsMap {
 			writeModel(zinc, *outputDir, content)
+			num += 1
 		}
 	}
+	fmt.Printf("Get %d models in total. Finished.\n", num)
 }
