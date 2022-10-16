@@ -8,6 +8,7 @@ import (
 	"path/filepath"
 	"regexp"
 	"strings"
+	"time"
 )
 
 var (
@@ -74,6 +75,7 @@ func writeModel(zinc string, filePath string, content string) {
 
 func main() {
 	flag.Parse()
+	start := time.Now()
 
 	var inputFiles []string
 
@@ -100,5 +102,6 @@ func main() {
 			num += 1
 		}
 	}
-	fmt.Printf("Get %d models in total. Finished.\n", num)
+	elapsed := time.Now().Sub(start)
+	fmt.Printf("Get %d models in total. Finished in %s.\n", num, elapsed)
 }
