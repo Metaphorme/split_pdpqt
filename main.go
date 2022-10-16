@@ -47,8 +47,8 @@ func splitModels(content string) []string {
 func getZINC(models []string) map[string]string {
 	var modelsMap map[string]string
 	modelsMap = make(map[string]string)
+	findZINC, _ := regexp.Compile("ZINC[0-9]*")
 	for _, model := range models {
-		findZINC, _ := regexp.Compile("ZINC[0-9]*")
 		modelsMap[findZINC.FindString(model)] = strings.TrimPrefix(model, "\n") + "ENDMDL\n"
 	}
 
