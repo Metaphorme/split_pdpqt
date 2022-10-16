@@ -95,6 +95,7 @@ func main() {
 	var num int
 
 	for _, fileName := range inputFiles {
+		fmt.Printf("Loading %s\n", fileName)
 		modelsMap := getZINC(splitModels(readFile(fileName)))
 		fmt.Printf("Get %d models from %s\n", len(modelsMap), fileName)
 		for zinc, content := range modelsMap {
