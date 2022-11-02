@@ -10,21 +10,21 @@ Split pdbqt file which contains many models into single file.
 ```bash
 git clone https://github.com/Metaphorme/split_pdpqt.git     # Get split_pdpqt
 cd split_pdpqt
-go build main.go                                            # Build
+go build split.go                                            # Build
 ```
 
 
 ## Examples
 ```bash
-./main -inputFile BBEDRL.xaa.pdbqt -outputDir output/
-./main -inputDir input/ -outputDir output/
-./main -inputFile BBEDRL.xaa.pdbqt -inputDir input/ -outputDir output/
+./split -inputFile BBEDRL.xaa.pdbqt -outputDir output/
+./split -inputDir input/ -outputDir output/
+./split -inputFile BBEDRL.xaa.pdbqt -inputDir input/ -outputDir output/
 ```
 
 
 ## Commands
 ```bash
-Usage of ./main:
+Usage of ./split:
   -inputDir string
     	The Directory of pdbqt file which contains many models. (default "NoInputDir")
   -inputFile string
