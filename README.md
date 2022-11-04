@@ -10,7 +10,7 @@ Split pdbqt file which contains many models into single file.
 ```bash
 git clone https://github.com/Metaphorme/split_pdpqt.git     # Get split_pdpqt
 cd split_pdpqt
-go build split.go                                            # Build
+go build split.go                                           # Build
 ```
 
 
